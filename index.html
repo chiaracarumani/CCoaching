@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCoaching</title>
+    <link rel="icon" type="image/jpg" href="./immagini/Logo.jpeg">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <h1>CHRISTIAN CAPOMAGI</h1>
+            <p>Personal Trainer</p>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#chi-sono">Chi sono</a></li>
+                <li><a href="#risultati">Risultati</a></li>
+                <li><a href="#servizi">Servizi</a></li>
+                <li><a href="#social">Social</a></li>
+                <li><a href="#compila-form" class="nav-button">Compila il Form</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="hero">
+            <div class="hero-content">
+                <h2>
+                    Nobody<br>
+                    Cares<br>
+                    <span>Work Harder</span>
+                </h2>
+
+                <p>
+                    Aiuto le persone a raggiungere i propri obiettivi con allenamenti personalizzati
+                    ed un metodo sostenibile con monitoraggio e supporto costante.
+                </p>
+
+                <div class="buttons">
+                    <a href="#compila-form" class="btn btn-light">Compila il form</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="feature">
+                <div class="icon">🏋🏻</div>
+                <div>
+                    <h3>Metodo Personalizzato</h3>
+                    <p>Ogni variabile viene adattata al tuo obiettivo, al tuo livello ed al tuo stile di vita.</p>
+                </div>
+            </div>
+
+            <div class="feature">
+                <div class="icon">🕝</div>
+                <div>
+                    <h3>Monitoraggio Costante</h3>
+                    <p>Check periodici, feedback e modifiche strategiche per continuare a progredire.</p>
+                </div>
+            </div>
+
+            <div class="feature">
+                <div class="icon">⭐</div>
+                <div>
+                    <h3>Metodo e Risultato</h3>
+                    <p>Niente improvvisazione: solo una strategia chiara per costruire massa, migliorare la composizione e performare meglio.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="about" id="chi-sono">
+            <div class="about-img"></div>
+
+            <div class="about-content">
+                <div class="section-label">Chi sono</div>
+
+                <h2>Ciao! Sono Christian<br>Personal Trainer certificato</h2>
+                <div class="line"></div>
+
+                <p>Da anni aiuto persone a raggiungere i loro obiettivi fisici e di forza.</p>
+
+                <p class="about-description">
+                    Il mio servizio consente la possibilità di scegliere tra tre diverse tipologie di percorsi
+                    pensati per adattarsi ai tuoi obiettivi, al tuo livello e al tuo stile di allenamento.
+                </p>
+
+                <ul class="about-list">
+                    <li>Ipertrofia</li>
+                    <li>Forza</li>
+                    <li>Ipertrofia + Forza</li>
+                </ul>
+
+                <div class="badges">
+                    <div class="badge">🎓 Formazione certificata</div>
+                    <div class="badge">🏅 Programmi su misura</div>
+                    <div class="badge">★ Esperienza sul campo</div>
+                </div>
+
+                <a href="pdf/infocoaching.pdf" download class="download-btn">
+                    Scarica Info Coaching
+                </a>
+            </div>
+        </section>
+
+        <section class="results" id="risultati">
+            <div class="results-text">
+                <div class="section-label">Risultati</div>
+
+                <h2>Storie vere,<br>risultati reali</h2>
+                <div class="line"></div>
+
+                <p>
+                    Ogni percorso è unico. Ogni trasformazione implica programmazione,
+                    fiducia e tempo.
+                </p>
+
+                <a href="#social" class="btn btn-dark">Inizia anche tu</a>
+            </div>
+
+            <div class="results-slider-wrapper">
+                <button class="slider-arrow prev" type="button" onclick="slideResults(-1)">
+                    &#10094;
+                </button>
+
+                <div class="results-slider" id="resultsSlider">
+                    <div class="result-card">
+                        <img src="immagini/risultato.png" alt="Risultato cliente">
+                        <h3>+5 kg in 3 mesi</h3>
+                        <p>Più energia, più forza, più fiducia in se stesso.</p>
+                    </div>
+
+                    <div class="result-card">
+                        <img src="immagini/risultato.png" alt="Risultato cliente">
+                        <h3>+9 kg in 5 mesi</h3>
+                        <p>Allenamenti mirati e alimentazione personalizzata.</p>
+                    </div>
+
+                    <div class="result-card">
+                        <img src="immagini/risultato.png" alt="Risultato cliente">
+                        <h3>+4 kg massa muscolare</h3>
+                        <p>Più forte ogni giorno, con un percorso progressivo.</p>
+                    </div>
+                </div>
+
+                <button class="slider-arrow next" type="button" onclick="slideResults(1)">
+                    &#10095;
+                </button>
+            </div>
+
+            <div class="quote">
+                <div class="quote-symbol">“</div>
+
+                <p>
+                    Christian non è solo un personal trainer, è una guida,
+                    una motivazione costante e un professionista straordinario.
+                </p>
+
+                <div class="stars">★★★★★</div>
+                <p>Chiara, 23 anni</p>
+            </div>
+        </section>
+
+        <section class="services" id="servizi">
+            <div>
+                <div class="section-label">Servizi</div>
+                <h2>Scegli il percorso<br>più adatto a te.</h2>
+                <div class="line"></div>
+            </div>
+
+            <div class="service-card">
+                <h3>Coaching Mensile</h3>
+            </div>
+
+            <div class="service-card">
+                <h3>Coaching Trimestrale</h3>
+            </div>
+
+            <div class="service-card">
+                <h3>Coaching Semestrale</h3>
+            </div>
+
+            <div class="service-card">
+                <h3>Coaching Annuale</h3>
+            </div>
+        </section>
+
+        <section class="cta" id="social">
+            <div>
+                <h2>Il primo passo è<br>decidere di iniziare.</h2>
+                <p>Compila il form per essere ricontattato.</p>
+            </div>
+
+            <div class="buttons" id="compila-form">
+                <a href="https://www.instagram.com/christian.capomagi/" class="btn btn-light" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeCh2Llp5fGKyO1bUDNuDPnYwpmxqzmZWdYg226mJhwXcx9XQ/viewform?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPMTI0MDI0NTc0Mjg3NDE0AAGnjRlQuQd8PzUnEgUZhBQXtmiMHcetIVubcyQUJ2-98uSFyhv1wzkJHdwvjAs_aem_vUk31B_5lt_93yg9dfecog" class="btn btn-light" target="_blank" rel="noopener noreferrer">Compila il form</a>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function slideResults(direction) {
+            const slider = document.getElementById("resultsSlider");
+            const card = slider.querySelector(".result-card");
+
+            slider.scrollBy({
+                left: direction * card.offsetWidth,
+                behavior: "smooth"
+            });
+        }
+    </script>
+</body>
+</html>
