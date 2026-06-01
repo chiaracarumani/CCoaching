@@ -1,6 +1,3 @@
-Certo. Sostituisci **tutto il file `style.css`** con questo. Ho sistemato la sezione **Risultati** per mobile, così le immagini non vengono più tagliate e la card resta dentro lo schermo. Ho mantenuto il resto del tuo stile originale. 
-
-```css
 * {
     margin: 0;
     padding: 0;
@@ -9,17 +6,24 @@ Certo. Sostituisci **tutto il file `style.css`** con questo. Ho sistemato la sez
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
     font-family: Arial, Helvetica, sans-serif;
     color: #111;
     background: #fff;
+    overflow-x: hidden;
 }
 
 a {
     text-decoration: none;
     color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
 }
 
 /* NAVBAR */
@@ -417,6 +421,12 @@ nav a {
 
     background: #090909;
     color: white;
+
+    overflow: hidden;
+}
+
+.results > * {
+    min-width: 0;
 }
 
 .results-text p {
@@ -428,21 +438,30 @@ nav a {
 
     width: 100%;
     max-width: 100%;
+    min-width: 0;
+
     overflow: hidden;
 }
 
 .results-slider {
     width: 100%;
+    max-width: 100%;
+    min-width: 0;
 
     display: flex;
-    overflow: hidden;
+
+    overflow-x: hidden;
+    overflow-y: hidden;
+
     scroll-behavior: smooth;
 }
 
 .result-card {
+    flex: 0 0 100%;
+
     width: 100%;
-    min-width: 100%;
-    flex-shrink: 0;
+    max-width: 100%;
+    min-width: 0;
 
     padding: 18px;
 
@@ -461,13 +480,13 @@ nav a {
 
 .result-card img {
     width: 100%;
-    height: auto;
-    aspect-ratio: 4 / 3;
+    max-width: 100%;
+    height: 330px;
+
+    display: block;
 
     object-fit: contain;
     object-position: center;
-
-    display: block;
 
     background: #f2f2f2;
     border-radius: 12px;
@@ -488,6 +507,9 @@ nav a {
     color: #ddd;
     font-size: 14px;
     line-height: 1.6;
+
+    overflow-wrap: break-word;
+    word-break: normal;
 }
 
 .slider-arrow {
@@ -516,11 +538,11 @@ nav a {
 }
 
 .prev {
-    left: 15px;
+    left: 12px;
 }
 
 .next {
-    right: 15px;
+    right: 12px;
 }
 
 .quote {
@@ -657,7 +679,7 @@ nav a {
     }
 }
 
-/* RESPONSIVE */
+/* RESPONSIVE TABLET E MOBILE */
 @media (max-width: 950px) {
     header {
         position: static;
@@ -704,7 +726,6 @@ nav a {
 
     .features,
     .about,
-    .results,
     .services {
         grid-template-columns: 1fr;
         padding: 45px 30px;
@@ -739,40 +760,69 @@ nav a {
 
     /* RISULTATI MOBILE */
     .results {
+        grid-template-columns: 1fr;
+
+        width: 100%;
+        max-width: 100%;
+
+        padding: 45px 20px;
         gap: 42px;
+
         overflow: hidden;
+    }
+
+    .results > * {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .results-text {
+        width: 100%;
+        max-width: 100%;
     }
 
     .results-slider-wrapper {
         width: 100%;
         max-width: 100%;
+        min-width: 0;
+
         overflow: hidden;
     }
 
     .results-slider {
         width: 100%;
         max-width: 100%;
-        overflow: hidden;
+        min-width: 0;
+
+        display: flex;
+
+        overflow-x: hidden;
+        overflow-y: hidden;
     }
 
     .result-card {
-        width: 100%;
-        min-width: 100%;
-        max-width: 100%;
+        flex: 0 0 100%;
 
-        padding: 18px;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        padding: 14px;
+
+        border-radius: 18px;
         overflow: hidden;
     }
 
     .result-card img {
         width: 100%;
-        height: auto;
-        aspect-ratio: 1 / 1;
+        max-width: 100%;
+
+        height: 260px;
 
         object-fit: contain;
         object-position: center;
 
-        display: block;
+        border-radius: 12px;
     }
 
     .result-card h3 {
@@ -781,6 +831,8 @@ nav a {
     }
 
     .result-card p {
+        max-width: 100%;
+
         font-size: 18px;
         line-height: 1.5;
 
@@ -795,11 +847,11 @@ nav a {
     }
 
     .prev {
-        left: 8px;
+        left: 6px;
     }
 
     .next {
-        right: 8px;
+        right: 6px;
     }
 
     .quote {
@@ -830,6 +882,7 @@ nav a {
     }
 }
 
+/* RESPONSIVE MOBILE PICCOLO */
 @media (max-width: 520px) {
     .hero h2 {
         font-size: 38px;
@@ -853,14 +906,18 @@ nav a {
         height: 390px;
     }
 
+    .results {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
     .result-card {
-        padding: 14px;
+        padding: 12px;
         border-radius: 16px;
     }
 
     .result-card img {
-        aspect-ratio: 1 / 1;
-        border-radius: 12px;
+        height: 230px;
     }
 
     .result-card h3 {
@@ -872,19 +929,21 @@ nav a {
     }
 
     .slider-arrow {
-        width: 40px;
-        height: 40px;
+        width: 36px;
+        height: 36px;
+        font-size: 20px;
     }
 
     .prev {
-        left: 6px;
+        left: 4px;
     }
 
     .next {
-        right: 6px;
+        right: 4px;
     }
 }
 
+/* RIDUZIONE ANIMAZIONI */
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -894,4 +953,3 @@ nav a {
         scroll-behavior: auto !important;
     }
 }
-```
