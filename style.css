@@ -1,3 +1,6 @@
+Certo. Sostituisci **tutto il file `style.css`** con questo. Ho sistemato la sezione **Risultati** per mobile, così le immagini non vengono più tagliate e la card resta dentro lo schermo. Ho mantenuto il resto del tuo stile originale. 
+
+```css
 * {
     margin: 0;
     padding: 0;
@@ -424,16 +427,20 @@ nav a {
     position: relative;
 
     width: 100%;
+    max-width: 100%;
     overflow: hidden;
 }
 
 .results-slider {
+    width: 100%;
+
     display: flex;
     overflow: hidden;
     scroll-behavior: smooth;
 }
 
 .result-card {
+    width: 100%;
     min-width: 100%;
     flex-shrink: 0;
 
@@ -442,6 +449,8 @@ nav a {
     background: rgba(255,255,255,0.06);
     border: 1px solid rgba(255,255,255,0.12);
     border-radius: 18px;
+
+    overflow: hidden;
 
     transition: background 0.35s ease;
 }
@@ -452,9 +461,15 @@ nav a {
 
 .result-card img {
     width: 100%;
-    height: 330px;
+    height: auto;
+    aspect-ratio: 4 / 3;
 
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center;
+
+    display: block;
+
+    background: #f2f2f2;
     border-radius: 12px;
     margin-bottom: 18px;
 
@@ -655,6 +670,16 @@ nav a {
         background: #080808;
     }
 
+    .logo h1 {
+        font-size: 20px;
+        letter-spacing: 5px;
+        text-align: center;
+    }
+
+    .logo p {
+        text-align: center;
+    }
+
     nav ul {
         flex-wrap: wrap;
         justify-content: center;
@@ -673,6 +698,10 @@ nav a {
         font-size: 46px;
     }
 
+    .hero h2 span {
+        font-size: 50px;
+    }
+
     .features,
     .about,
     .results,
@@ -682,12 +711,21 @@ nav a {
     }
 
     .feature {
+        padding: 0;
         border-right: none;
+    }
+
+    .about {
+        gap: 40px;
     }
 
     .about-img {
         width: 100%;
         height: 480px;
+    }
+
+    .about-content {
+        padding: 36px 28px;
     }
 
     .badges {
@@ -697,6 +735,79 @@ nav a {
 
     .badge:not(:last-child) {
         border-right: none;
+    }
+
+    /* RISULTATI MOBILE */
+    .results {
+        gap: 42px;
+        overflow: hidden;
+    }
+
+    .results-slider-wrapper {
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .results-slider {
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .result-card {
+        width: 100%;
+        min-width: 100%;
+        max-width: 100%;
+
+        padding: 18px;
+        overflow: hidden;
+    }
+
+    .result-card img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+
+        object-fit: contain;
+        object-position: center;
+
+        display: block;
+    }
+
+    .result-card h3 {
+        font-size: 22px;
+        line-height: 1.2;
+    }
+
+    .result-card p {
+        font-size: 18px;
+        line-height: 1.5;
+
+        overflow-wrap: break-word;
+        word-break: normal;
+    }
+
+    .slider-arrow {
+        width: 42px;
+        height: 42px;
+        font-size: 22px;
+    }
+
+    .prev {
+        left: 8px;
+    }
+
+    .next {
+        right: 8px;
+    }
+
+    .quote {
+        padding-left: 0;
+    }
+
+    .services {
+        gap: 18px;
     }
 
     .cta {
@@ -709,10 +820,68 @@ nav a {
         font-size: 44px;
     }
 
+    .cta .buttons {
+        width: 100%;
+    }
+
+    .cta .btn {
+        width: 100%;
+        min-width: auto;
+    }
+}
+
+@media (max-width: 520px) {
+    .hero h2 {
+        font-size: 38px;
+    }
+
+    .hero h2 span {
+        font-size: 42px;
+    }
+
+    .section-label {
+        font-size: 16px;
+        letter-spacing: 4px;
+    }
+
+    .about h2,
+    .services h2 {
+        font-size: 30px;
+    }
+
+    .about-img {
+        height: 390px;
+    }
+
+    .result-card {
+        padding: 14px;
+        border-radius: 16px;
+    }
+
+    .result-card img {
+        aspect-ratio: 1 / 1;
+        border-radius: 12px;
+    }
+
+    .result-card h3 {
+        font-size: 20px;
+    }
+
+    .result-card p {
+        font-size: 17px;
+    }
+
     .slider-arrow {
-        width: 42px;
-        height: 42px;
-        font-size: 22px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .prev {
+        left: 6px;
+    }
+
+    .next {
+        right: 6px;
     }
 }
 
@@ -725,3 +894,4 @@ nav a {
         scroll-behavior: auto !important;
     }
 }
+```
